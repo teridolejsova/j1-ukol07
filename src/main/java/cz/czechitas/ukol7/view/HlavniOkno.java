@@ -23,6 +23,7 @@ public class HlavniOkno extends JFrame {
         this.init();
 
     }
+
     public void start() {
         setLocationRelativeTo(null);
         setVisible(true);
@@ -31,7 +32,7 @@ public class HlavniOkno extends JFrame {
     private void init() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setIconImage(new ImageIcon(Aplikace.class.getResource("czechitas-icon.png")).getImage());
-        setLayout(new MigLayout("wrap 4", "[right, 100]rel[50:75:250,grow,fill]unrel[right, 100]rel[50:75:250,grow,fill]"));
+        setLayout(new MigLayout("wrap 2", "[right, 100]rel[50:75:250,grow,fill]unrel[right, 100]rel[50:75:250,grow,fill]"));
         setMinimumSize(new Dimension(400, 200));
 
         FormBuilderWithContainer<PreferenceBean> formbuilder = FormBuilder.create(controller.getModel())
@@ -40,8 +41,20 @@ public class HlavniOkno extends JFrame {
                 .label("Přezdívka")
                 .textField("prezdivka")
                 .add();
-/*        formbuilder
-                .radioButton("Barva", "Barva",Barva)
-                .add();*/
+      formbuilder
+                .radioButton("Barva", "Barva",formbuilder)
+                .add();
+
+        formbuilder
+                .panel(panel -> {
+                    JButton ulozitButton = new JButton(controller.getUlozitAction());
+
+                    getRootPane().setDefaultButton(ulozitButton);
+
+                    panel.add(ulozitButton);
+                })
+                .add("span");
+
+        pack();
     }
 }
