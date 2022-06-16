@@ -18,7 +18,7 @@ public class PreferenceController {
     }
 
     public PreferenceController() {
-        model = new PresentationModel<PreferenceBean>();
+        model = new PresentationModel<PreferenceBean>(new PreferenceBean());
         ulozitAction = ActionBuilder.create("Uložit", this::handleUlozit);
         model.addBeanPropertyChangeListener(this::handlePropertyChange);
     }

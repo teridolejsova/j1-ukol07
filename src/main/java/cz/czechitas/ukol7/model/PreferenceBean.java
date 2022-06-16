@@ -28,9 +28,8 @@ public class PreferenceBean implements ObservableBean {
     public void setOblibenaBarva(String oblibenaBarva) {
         String oldValue = this.oblibenaBarva;
         this.oblibenaBarva = oblibenaBarva;
-        pcs.firePropertyChange("Oblibena barva", oldValue, oblibenaBarva);
+        pcs.firePropertyChange("oblibenaBarva", oldValue, oblibenaBarva);
     }
-
 
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {

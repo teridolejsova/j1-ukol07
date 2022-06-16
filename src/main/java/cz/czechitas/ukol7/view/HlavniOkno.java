@@ -42,8 +42,23 @@ public class HlavniOkno extends JFrame {
                 .textField("prezdivka")
                 .add();
       formbuilder
-                .radioButton("Barva", "Barva",formbuilder)
-                .add();
+                .radioButton("Tyrkysová", "oblibenaBarva",Barva.tyrkysova.name())
+              .add("left,span");
+        formbuilder
+                .radioButton("Modrá", "oblibenaBarva",Barva.modra.name())
+                .add("left,span");
+        formbuilder
+                .radioButton("Zelená", "oblibenaBarva",Barva.zelena.name())
+                .add("left,span");
+        formbuilder
+                .radioButton("Žlutá", "oblibenaBarva",Barva.zluta.name())
+                .add("left,span");
+        formbuilder
+                .radioButton("Fialová", "oblibenaBarva",Barva.fialova.name())
+                .add("left,span");
+        formbuilder
+                .radioButton("Růžová", "oblibenaBarva",Barva.ruzova.name())
+                .add("left,span");
 
         formbuilder
                 .panel(panel -> {
