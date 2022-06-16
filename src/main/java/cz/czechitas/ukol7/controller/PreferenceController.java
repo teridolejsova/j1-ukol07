@@ -5,6 +5,7 @@ import cz.czechitas.ukol7.formbuilder.ActionBuilder;
 import cz.czechitas.ukol7.model.PreferenceBean;
 
 import javax.swing.*;
+import java.beans.PropertyChangeEvent;
 
 
 public class PreferenceController {
@@ -19,16 +20,18 @@ public class PreferenceController {
     public PreferenceController() {
         model = new PresentationModel<PreferenceBean>();
         ulozitAction = ActionBuilder.create("Uložit", this::handleUlozit);
-        model.addBeanPropertyChangeListener(this::);
-
+        model.addBeanPropertyChangeListener(this::handlePropertyChange);
     }
-
     public PresentationModel<PreferenceBean> getModel() {
         return model;
     }
 
     public Action getUlozitAction() {
         return ulozitAction;
+    }
+
+    private void handlePropertyChange(PropertyChangeEvent propertyChangeEvent) {
+        vypoctiStavAkci();
     }
 
     private void vypoctiStavAkci() {

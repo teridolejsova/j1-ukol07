@@ -40,8 +40,8 @@ public class HlavniOkno extends JFrame {
                 .label("Přezdívka")
                 .textField("prezdivka")
                 .add();
-        formbuilder
+/*        formbuilder
                 .radioButton("Barva", "Barva",Barva)
-                .add();
+                .add();*/
     }
 }
