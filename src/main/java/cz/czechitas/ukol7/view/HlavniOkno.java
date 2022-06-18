@@ -53,6 +53,7 @@ public class HlavniOkno extends JFrame {
         formbuilder
                 .panel(panel -> {
                     JButton ulozitButton = new JButton(controller.getUlozitAction());
+                    ulozitButton.setEnabled(false);
 
                     getRootPane().setDefaultButton(ulozitButton);
 
