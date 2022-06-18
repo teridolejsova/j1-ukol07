@@ -1,10 +1,20 @@
 package cz.czechitas.ukol7;
 
 public enum Barva {
-    tyrkysova,
-    modra,
-    zelena,
-    zluta,
-    fialova,
-    ruzova;
+    tyrkysova("Tyrkysová"),
+    modra("Modrá"),
+    zluta("Žlutá"),
+    zelena("Zelená"),
+    fialova("Fialová"),
+    ruzova("Růžová"),
+            ;
+
+    private final String textBarvy;
+
+    Barva(String textBarvy){
+        this.textBarvy = textBarvy;
+    }
+    public String getTextBarvy(){
+        return textBarvy;
+    }
 }
